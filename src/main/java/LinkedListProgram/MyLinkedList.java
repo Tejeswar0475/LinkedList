@@ -48,6 +48,12 @@ public class MyLinkedList {
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	
+	public void pop()
+	{
+		INode tempNode =this.head;
+		this.head=head.getNext();
+	}
 
 	public void printMyNodes()
 	{
@@ -58,8 +64,7 @@ public class MyLinkedList {
 			myNodes.append(tempNode.getKey());
 			if(!tempNode.equals(tail)) myNodes.append("->");
 			tempNode=tempNode.getNext();
-		}
-		
+		}	
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
