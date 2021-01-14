@@ -1,29 +1,40 @@
 package LinkedListProgram;
 
-public class MyNode<K> {
+
+public class MyNode<K> implements INode<K> {
 	
 	private K key;
-	private MyNode next;
+	private INode next;
 	
 	MyNode(K key)
 	{
-		this.key=null;
+		this.key=key;
 		this.next=null;	
 	}
 	
-	public void setNext(MyNode next)
+	public K getKey()
 	{
-		this.next=next;
+		return key;
 	}
 	
-	public MyNode getNext()
+	public void setKey(K key)
+	{
+		this.key=key;
+	}
+	
+	public INode<K> getNext()
 	{
 		return next;	
 	}
 	
-	
-	public static void main(String[] args)
+	public void setNext(INode next)
 	{
-		System.out.println("Welcome to linked list program");
+		this.next=(MyNode<K>) next;
 	}
+	
+	
+	
+	
+	
+	
 }
